@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tabs {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tab {
+  padding: 10px 20px;
+  background: #333;
+  color: #ccc;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab.active, .tab:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.panel.hidden {
+  display: none;
+}
+
+.card {
+  background: #2e2e42;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, select, button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+input, select {
+  background: #444;
+  color: #fff;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list li {
+  background: #3b3b52;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.list button {
+  margin-left: 8px;
+  background: #ff5252;
+  padding: 5px 10px;
+}
+
+.list button:hover {
+  background: #ff0000;
+}
+
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.toast {
+  background: #444;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  color: white;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📚 Catálogo de Livros</title>
+  <link rel="stylesheet" href="../assents/CSS/style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>📚 Catálogo de Livros</h1>
+    <nav class="tabs">
+      <button id="tab-bib" class="tab active">Bibliotecários</button>
+      <button id="tab-livro" class="tab">Livros</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="section-bib" class="panel">
+      <div class="card">
+        <h2>Cadastro de Bibliotecário</h2>
+        <form id="form-bib" class="form">
+          <input type="hidden" id="bib-id" />
+          <label>
+            Nome
+            <input type="text" id="bib-nome" required />
+          </label>
+          <label>
+            E‑mail
+            <input type="email" id="bib-email" required />
+          </label>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+      </div>
+      <div class="card">
+        <h2>Lista de Bibliotecários</h2>
+        <ul id="lista-bib" class="list"></ul>
+      </div>
+    </section>
+
+    <section id="section-livro" class="panel hidden">
+      <div class="card">
+        <h2>Cadastro de Livro</h2>
+        <form id="form-livro" class="form">
+          <input type="hidden" id="livro-id" />
+          <label>
+            Bibliotecário
+            <select id="livro-bib" required>
+              <option value="">Selecione...</option>
+            </select>
+          </label>
+          <label>
+            Título
+            <input type="text" id="livro-titulo" required />
+          </label>
+          <label>
+            Autor
+            <input type="text" id="livro-autor" required />
+          </label>
+          <label>
+            Gênero
+            <input type="text" id="livro-genero" required />
+          </label>
+          <label>
+            Status
+            <select id="livro-status">
+              <option>Disponível</option>
+              <option>Emprestado</option>
+              <option>Reservado</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+      </div>
+      <div class="card">
+        <h2>Lista de Livros</h2>
+        <ul id="lista-livro" class="list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="../assents/JS/script.js"></script>
+</body>
+</html>

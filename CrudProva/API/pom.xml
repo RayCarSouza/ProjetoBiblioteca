@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ============================================= -->
+    <!--   Parent Spring Boot para gerenciar versões   -->
+    <!-- ============================================= -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.0</version>  <!-- Versão do Spring Boot -->
+        <relativePath/>           <!-- Procura o POM pai no repositório local -->
+    </parent>
+
+    <!-- ===================== -->
+    <!--   Informações do Projeto -->
+    <!-- ===================== -->
+    <groupId>com.example</groupId>           <!-- Seu pacote base -->
+    <artifactId>catalogo-livros</artifactId> <!-- Nome do artefato gerado -->
+    <version>0.0.1-SNAPSHOT</version>       <!-- Versão do projeto -->
+    <name>catalogo-livros</name>            <!-- Nome legível do projeto -->
+    <description>Sistema de Catálogo de Livros com Spring Boot</description>
+
+    <!-- ================================ -->
+    <!--   Propriedades de configuração  -->
+    <!-- ================================ -->
+    <properties>
+        <!-- Versão do Java utilizada no projeto -->
+        <java.version>21</java.version>
+        <!-- Versão do Lombok para redução de boilerplate -->
+        <lombok.version>1.18.38</lombok.version>
+    </properties>
+
+    <!-- ============================== -->
+    <!--        Dependências do projeto -->
+    <!-- ============================== -->
+    <dependencies>
+        <!-- =========================== -->
+        <!-- Spring Web: para criar APIs REST -->
+        <!-- =========================== -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- ============================ -->
+        <!-- Spring Data JPA: persistência -->
+        <!-- ============================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- ============================= -->
+        <!-- Driver MySQL: conecta ao MySQL -->
+        <!-- ============================= -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- ================================ -->
+        <!-- Lombok: reduz código boilerplate -->
+        <!-- ================================ -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- ================================ -->
+        <!-- DevTools: recarga automática em dev -->
+        <!-- ================================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- ========================================== -->
+        <!-- Configuration Processor: processa propriedades -->
+        <!-- ========================================== -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- ============================= -->
+        <!-- Testes: JUnit, Mockito e afins -->
+        <!-- ============================= -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- ============================= -->
+    <!--     Build e Plugins Maven     -->
+    <!-- ============================= -->
+    <build>
+        <plugins>
+            <!-- =================================== -->
+            <!-- Compiler Plugin: define Java 21 -->
+            <!-- =================================== -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
+                <configuration>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+
+            <!-- ================================ -->
+            <!-- Spring Boot Maven Plugin: empacotamento e execução -->
+            <!-- ================================ -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
