@@ -6,14 +6,18 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #1e1e2f;
-  color: #f0f0f0;
+  background-color: #f5f5dc; /* Cor tipo papel */
+  color: #333;
   padding: 20px;
 }
 
 .header {
   text-align: center;
   margin-bottom: 30px;
+}
+
+h1 {
+  color: #222;
 }
 
 .tabs {
@@ -24,18 +28,18 @@ body {
 }
 
 .tab {
-  padding: 10px 20px;
-  background: #333;
-  color: #ccc;
-  border: none;
-  border-radius: 8px;
+  padding: 10px 25px;
+  background: #e8e8d8;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 20px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .tab.active, .tab:hover {
-  background: #007bff;
-  color: #fff;
+  background: #333;
+  color: #f5f5dc;
 }
 
 .container {
@@ -49,31 +53,50 @@ body {
 }
 
 .card {
-  background: #2e2e42;
+  background: #fffef5;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: #111;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
-input, select, button {
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 500;
 }
 
 input, select {
-  background: #444;
-  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  color: #222;
+  transition: 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #007bff;
+  outline: none;
+  background: #fff;
 }
 
 button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
   background: #007bff;
   color: white;
   cursor: pointer;
@@ -92,20 +115,31 @@ button:hover {
 }
 
 .list li {
-  background: #3b3b52;
+  background: #fafafa;
   padding: 12px;
   border-radius: 8px;
-  transition: 0.2s;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list li:hover {
+  background: #f0f0e8;
 }
 
 .list button {
   margin-left: 8px;
   background: #ff5252;
+  color: white;
   padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .list button:hover {
-  background: #ff0000;
+  background: #e60000;
 }
 
 .toast-container {
@@ -115,7 +149,7 @@ button:hover {
 }
 
 .toast {
-  background: #444;
+  background: #333;
   padding: 10px 20px;
   margin-top: 10px;
   border-radius: 8px;
