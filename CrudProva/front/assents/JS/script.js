@@ -40,10 +40,12 @@ async function carregarBibliotecarios() {
     biblios.forEach(b => {
       const li = document.createElement('li');
       li.innerHTML = `
-        <strong>${b.nome}</strong> - ${b.email}
+       <span><strong>${b.nome}</strong> - ${b.email}</span>
+       <div class="actions">
         <button onclick="editarBib(${b.id})">✏️</button>
         <button onclick="excluirBib(${b.id})">🗑️</button>
-      `;
+      </div>
+        `;
       lista.appendChild(li);
 
       const option = document.createElement('option');
@@ -104,11 +106,11 @@ async function carregarLivros() {
     livros.forEach(l => {
       const li = document.createElement('li');
       li.innerHTML = `
-        <strong>${l.titulo}</strong> - ${l.autor} (${l.status})
+      <strong>${l.titulo}</strong> - ${l.autor} (${l.status})
         <br><small>${l.bibliotecario?.nome || 'Sem bibliotecário'}</small>
         <button onclick="editarLivro(${l.id})">✏️</button>
         <button onclick="excluirLivro(${l.id})">🗑️</button>
-      `;
+        `;
       lista.appendChild(li);
     });
   } catch {
