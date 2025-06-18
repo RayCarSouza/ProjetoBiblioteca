@@ -111,7 +111,7 @@ button:hover {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .list li {
@@ -130,16 +130,17 @@ button:hover {
 
 .list button {
   margin-left: 8px;
-  background: #ff5252;
+  background: #000000;
   color: white;
   padding: 5px 10px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  gap 8;
 }
 
 .list button:hover {
-  background: #e60000;
+  background: #ffffff;
 }
 
 .toast-container {
